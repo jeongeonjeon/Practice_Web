@@ -1,8 +1,0 @@
-#액션 - forward
- - 호출된 페이지에서 다른 페이지로 요청 처리가 이동
- - 파라미터와 공유영역(request) 이용하여 데이터를 공유
- - 구문 : <jsp:forward page = "파일경로" />
-		<jsp:forward page = "파일경로">
-		<jsp:param name="msg" value="test" />
-		</jsp:forward>
- - 활용 : JSP 페이지에서 조건에 따른 페이지 이동
