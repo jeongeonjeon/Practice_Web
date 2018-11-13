@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var testFunction = function(){
+		alert("익명함수 testFunction 호출");	//익명함수의 우선순위가 가장 높다.
+	}
+	
+	function testFunction(){
+		alert("call testFunction");
+	}
+	function testFunction(num){
+		alert('num : '+num);
+	}
+	
+// 	testFuntion();	// 자바스크립트는 오버로딩 불가
+	testFunction(100);
+	
+//------------------------------------------------------------
+	
+	
+	function sum(a,b){
+		return a+b;
+	}
+	
+	function getSum(a,b){	//getter
+		var sum = 0;
+		var temp;
+		if(a>b){
+			temp = a;
+			a = b;
+			b = temp;
+		}
+		for(var i=a;i<=b;i++){
+			sum+=i;
+		}
+		return sum;
+	}
+	
+	function printSum(a,b){
+		
+		var sum = getSum(a,b);
+		alert(a + " ~ " + b + " 총합 : " + sum);
+	}
+	
+	printSum(1,10);
+	
+	var total = sum(10,20);
+	alert("총합 : " + total);
+	
+//------------------------------------------------------------
+	
+	function callbackFunction(a){
+		a();
+	}
+	function func(){
+		alert("call func()..");
+	}
+	var func  = function(){
+		alert("익명함수 func() 호출");
+	}
+	callbackFunction(func);			//익명함수를 정의 후 사용하기 귀찮아 아래 콜백함수를 사용한다.
+	
+	callbackFunction(function(){	//콜백함수 : 함수 호출과 동시에 정의  
+		alert("콜백함수 호출..")
+	});
+	
+	function returnFunc(){
+		return function(){			//클로저 : return 값이 함수인 경우
+			alert("return문에 사용하는 익명함수");
+		}
+	}
+	var fn = returnFunc();
+	fn();
+//------------------------------------------------------------
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

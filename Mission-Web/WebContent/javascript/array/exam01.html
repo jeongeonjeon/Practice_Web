@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var array = [10, "A", 12.34, true, "hello", null, undefined, '!'];
+	
+	for(i=0;i<array.length;i++){
+		document.write(`array[${i}] : ${array[i]} <br>`)
+	}
+	document.write('array : ' + array + '<br>');
+	document.write('<hr>');
+	
+	array[8] = "add";
+	document.write('add 추가후 array : ' + array + '<br>');
+	
+	array[12] = "end";
+	document.write('end 추가후 array : ' + array + '<br>');
+	document.write(array.length+"<br>");
+	
+	array.push("추가");			//스택
+	document.write('push() 후 array : ' + array + '<br>');
+	document.write(array.length+"<br>");
+	
+	var del = array.pop();
+	document.write('삭제된 데이터 : ' + del + '<br>');
+	document.write('pop() 후 array : ' + array + '<br>');
+	
+	del = array.pop();
+	document.write('삭제된 데이터 : ' + del + '<br>');
+	
+	document.write('array : ' + array + '<br>');
+	document.write('array 원소개수 : ' + array.length + '개<br>');
+	
+	document.write('typeof(array) : ' + typeof(array) + '<br>');
+	
+	var str = "hello world";
+	document.write('문자열의 길이 : ' + str.length + '<br>');
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

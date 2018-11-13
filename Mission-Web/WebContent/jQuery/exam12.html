@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ 	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		position:absolute;
+	} 
+</style>
+<script src="/Lecture_Web/jQuery/js/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		$('div').animate({
+			left:'200px',
+			width:'+=50px'
+		},2000);
+		
+		$('div').animate({
+			top:'100px',
+			height:'+=50px',
+			opacity:'0.3'
+		},1000);
+		
+		$('div').animate({
+			left:'0',
+			width:'100px',
+			height:'100px',
+			opacity:'0.2'
+		},1000);
+		
+		$('div').animate({
+			top:'0px',
+			opacity:'1',
+// 			backgroundColor:'blue',
+			'border-radius':'50%'
+		},3000,function(){
+			$(this).css('background-color','blue');
+		});
+		
+// 		$('div').animate({
+// 			'background-color':'blue'	
+// 		});
+				
+		
+	});
+</script>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

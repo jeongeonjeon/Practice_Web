@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+		name : '홍길동',
+		phone : '010-0000-1234'
+	};
+	
+	document.write('이름 : '+ person.name +"<br>");
+	document.write('전화번호 : '+person.phone+"<br>");
+	document.write("<br>");
+	
+	document.write('이름 : ' +person['name']+"<br>");
+	document.write('전화번호 : ' +person['phone']+"<br>");
+	document.write("<br>");
+	
+	document.write("name의 속성 존재 여부 : " + ('name' in person) + "<br>");
+	document.write("phone의 속성 존재 여부 : " + ('phone' in person) + "<br>");
+	document.write("addr의 속성 존재 여부 : " + ('addr' in person) + "<br>");
+	
+//addr속성 추가
+// 	person.addr = "서울시 강남구 역삼동";
+	person["addr"] = "서울특별시 강남구 역삼동";
+	
+	document.write("<br>");
+	document.write("name의 속성 존재 여부 : " + ('name' in person) + "<br>");
+	document.write("phone의 속성 존재 여부 : " + ('phone' in person) + "<br>");
+	document.write("addr의 속성 존재 여부 : " + ('addr' in person) + "<br>");
+	
+	console.log(person);
+	
+//객체의 속성 삭제
+	delete(person.phone);
+	
+	console.log(person);
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

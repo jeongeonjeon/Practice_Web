@@ -1,0 +1,60 @@
+#JSTL(JSP standard Tag Library)
+-라이브러리 jar파일 추가 후 uri추가
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+※ jsp에서 java의 변수를 사용하려면!!!!
+  -> 변수를 공유영역에 올린 후 EL로 가져온다!!!
+
+#core - set태그
+ - 형식 : <c:set var="" value="" [scope=""] />
+ - 속성설명
+	->var : 설정할 변수명
+	->value : 설정할 값
+	->scope : 변수의 사용영역 ( *공유영역 : page, request, session, application)
+			  default 사용영역 ( page )
+
+#core - remove태그
+ - 형식 : <c:remove var="cnt" [cope="page"]>
+ 	->scope를 설정하지 않으면 모든 영역의 동일한 변수가 모두 삭제됨
+ 		※scope를 항상 지정해주어야한다! 매우 중요!
+ 		
+ 		
+#core - out태그
+ - 형식 : <c:out value="" [escapeXml="true/false"] [default=""] />
+ - 출력 전용 태그
+ - 속성설명
+ 	->value
+ 	->escapeXml : true가 기본값 / false면 html태그로 인식
+ 	->default : value값이 없으면 default에 있는 내용으로 출력하라.
+ - 장점 : 보안강화
+ 
+#core - if태그	--- else는 없음, if들을 나열해야함
+ - 형식 : <c:if test="조건">
+ 		</c:if>
+ - 조건에 따라 내용을 실행
+ - 속성설명
+ 	->test : 참과 거짓을 판단하는 조건을 명시
+
+#core - choose 태그
+ - <c:choose>				   	  switch와 비교
+ 		<c:when test = "">			case '':역할
+ 		</c:when>
+ 		<c:when test=">				case '':역할
+ 		</c:when>
+ 		<c:otherwise>				default:역할
+ 		</c:otherwise>
+   </c:choose>
+   
+#core - forEach 태그 
+ - <c:forEach var="" items="" [varStatus=""]>
+   </c:forEach>  
+ - <c:forEach var="" begin="" end="">
+   </c:forEach>  
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 손님이 슈퍼마켓에서 물건을 사고 돈을 지불했을 때 해당 거스름돈액수와
+// 1000원, 500원, 100원, 50원, 10원의 개수를 출력하는 코드를 작성
+
+//    물건값을 입력 : 6480
+//    지불한 돈의 액수 입력 : 10000
+   
+//    거스름돈 : 3520원
+//    1000원 : 3개
+//     500원 : 1개
+//     100원 : 0개
+//      50원 : 0개
+//      10원 : 2개
+
+	price = Number(prompt("물건값을 입력하시오."));
+	money = Number(prompt("지불한 돈의 액수를 입력하시오."));
+	change = money - price ; 
+	
+	document.write(`거스름돈 : ${change}원<br>`);
+	document.write(`1000원 : ${Math.floor(change/1000)}개<br>`);
+	document.write(`500원 : ${Math.floor((change%1000)/500)}개<br>`);
+	document.write(`100원 : ${Math.floor(((change%1000)%500)/100)}개<br>`);
+	document.write(`50원 : ${Math.floor((((change%1000)%500)%100)/50)}개<br>`);
+	document.write(`10원 : ${(((change%1000)%500)%100)%50/10}개<br>`);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

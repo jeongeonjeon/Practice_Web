@@ -1,0 +1,28 @@
+--쿠키와 세션이 있음--
+#세션
+ - 정보저장 위치 : 서버
+ - 서버의 부하가 가중된다.
+ - 보안상의 문제 발생 소지를 줄인다.
+ - 정보저장 최대 유효기간이 브라우저가 종료될 때 까지 이다.
+ - 정보저장 시 모든 객체타입이 가능 하다
+ 
+# 세션 주요 API 메소드
+ <세션 객체 얻기>
+ 	- javax.servlet.http.HttpServletRequest.getSession()
+ 	- javax.servlet.http.HttpServletRequest.getSession(boolean create)
+ 	※ 세션이 없을 경우 새롭게 생성, 존재한다면 존재하는 객체 변환
+ 		HttpSession session = 
+ 	※세션이 없을 경우 null,존재한다면 존재하는 객체 반환
+ <세션에 값 설정>
+ 	- session.setAttribute(String name,Object value)
+ 	- 값 저장시 유지보수를 위하여 단순 문자열보다는 클래스 객체를 선호한다.
+ <세션에 설정된 값 추출>
+ 	- Object obj = session.getAttribute(String name)
+ <세션 속성 삭제>
+ 	- session.removeAttribute(String name)
+ <세션 삭제>
+ 	- session.invalidate()
+ 
+#세션을 이용한 로그인/로그아웃
+
+ 

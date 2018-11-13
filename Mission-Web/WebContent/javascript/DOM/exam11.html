@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function checkData(){
+// 		var id = document.getElementById("id");
+// 		var pwd = document.getElementById("pwd");
+// 		var pwdCheck = document.getElementById("pwdCheck");
+		
+		/* form의 name을 사용하여 가져옴 */
+		var id = document.inputForm.id;		// var id = document.inputForm[0];과 동일
+		var pwd = document.inputForm.pwd;
+		var pwdCheck = document.inputForm.pwdCheck;
+		
+		if(id.value.length!='0'&&pwd.value.length!='0'&&pwdCheck.value.length!='0'){
+			if(pwd.value.length>=8 && pwd.value.length<=16){
+				if(pwd.value == pwdCheck.value){
+					return true;
+				}else{
+					alert("패스워드가 서로 다릅니다.");
+				}
+			}else{
+				alert("비밀번호는 8~16자리로 입력해주세요");
+			}
+		}else{
+			alert("모두 다 입력 후 전송을 누르세요");
+		}
+		
+		
+		
+		
+		return false;
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<form name="inputForm" action="http://www.naver.com" 
+		  onsubmit="return checkData()">	<!-- "return true"일때만 action됨 
+		  								 "return false"이면 넘어가지 않음-->
+		아이디 : <input type="text" id="id" name="id"><br>
+		패스워드 : <input type="password" id="pwd" name="pwd"><br>
+		패스워드 확인 : <input type="password" id="pwdCheck" name="pwdCheck"><br>
+		
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

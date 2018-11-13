@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	alert(typeof -1);
+	alert(typeof Boolean(-1));
+	alert(Boolean(-1));
+
+	var num = "312";
+	alert(typeof num);	// string
+	
+	num = Number(num);	// string -> number
+	alert(typeof num);	// number
+	
+	num = num.toString();	// number -> string
+	alert(typeof num);	// strin
+
+	var temp;
+	temp = 3 + " + " + 5;
+	alert(typeof temp);
+
+	alert(3 + " + " + 5);
+
+	// 1 + 1 = 2
+	
+	var a = 10;
+	var b = 20;
+	document.write(a + " + " + b + " = " + (a + b) + "<br>");
+	document.write(1 + " + " + 1 + " = " + (1 + 1) + "<br>");
+	
+	document.write(10 + '<br>');
+	document.write(20 + '<br>');
+
+	document.write(10);
+	document.write("<br>");
+	document.write(20);
+	document.write('<br>');
+</script>
+</head>
+<body>
+</body>
+</html>

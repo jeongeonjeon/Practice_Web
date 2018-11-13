@@ -1,0 +1,73 @@
+#페이지 내용을 포함하는 3가지 방식
+ - directive(지시자) - include
+ - action(액션)	   - include
+ - jstl		- import
+ 
+#지시자 - include
+ - 역할 : 다른 페이지의 코드를 내 페이지로 포함
+ - 구문 : <%@ include file = "파일경로" %>
+ - 시점 : jsp가 java로 변환될 때 같이 포함
+ - 활용 : jsp페이지에서 사용되는 공통 변수 지정
+		각 페이지에 고정적으로 사용되는 내용 처리
+		 : 사이트의 하단 부분
+
+#액션 - include
+ - 역할 : 다른 페이지의 실행결과를 내 페이지로 포함
+ - 구문 : <jsp:include page="파일경로" />
+ 		<jsp:include page="파일경로">
+ 			<jsp:param name="msg" value="test">  ------> 다른 파일에선 param.msg로 접근 가능!
+ 		</jsp:include>
+ - 실행 : 실행시 (실행된 결과값이 포함)
+ - 활용 : jsp페이지 내의 중복적인 부분을 처리
+		 : 사이트의 메뉴 
+
+#pageContext영역 - 자신의 파일에서 등록한 객체는 오직 자신의 영역에서만 볼 수 있음
+#request영역 - (한번 요청에 응답이 올 때까지 연결된)서로 다른 파일에서 같은 변수를 공유하고 싶을 때 쓰는 영역
+#session영역 - 로그인이나 장바구니에 사용
+
+-->action에서 공통변수 사용 예시(request영역에서)
+	--test.jsp--
+		request.setAttribute("name","s");
+		<jsp:include page="in.jsp" />
+	--in.jsp--
+		공유 : ${ name }
+	--실제 출력--
+		공유 : s
+
+#JSTL - import
+ - action include와 같은 기능을 사용할 수 있다.
+ - taglib의 core 내부에 정의되어있다.
+ - 구문 : <c:import url="파일경로" />
+ 		<c:import url="파일경로">
+			<c:param name="msg" value="test" />
+ 		</c:import>
+ - action과 차이점 : action은 같은 서버에서만 가능하지만 JSTL-import는 다른 서버도 가능!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

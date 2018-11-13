@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	window.onload = function(){
+		
+		var h1Tag = document.createElement("h1");
+		var h1TagText = document.createTextNode("클릭해봐");
+		
+		h1Tag.appendChild(h1TagText);
+		document.body.appendChild(h1Tag);
+		
+		h1Tag.onclick = function(){
+			alert("h1 Tag 클릭했습니다.")
+		}
+	}
+
+	function clickBtn(){
+		setTimeout(function(){
+			alert("5초가 지났습니다.");
+		},5000)
+	}
+	
+</script>
+</head>
+<body>
+	<input id="btn01" type="button" value="클릭">
+	<!-- 인라인 이벤트 모델 : 이벤트 추가 -->
+	<input type="button" value="클릭2" onclick="clickBtn()">
+	
+
+</body>
+</html>

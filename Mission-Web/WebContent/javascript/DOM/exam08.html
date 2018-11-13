@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+	이벤트 핸들러
+	1. 마우스 이벤트
+	2. 키보드 이벤트
+	3. HTML 프레임 이벤트
+	4. HTML 입력양식 이벤트
+	5. 사용자 정의 이벤트
+	6. 구조변화 이벤트
+	
+	이벤트 처리기법
+	1. 고전적 이벤트 모델'
+	2. 인라인 이벤트 모델
+	3. 표준 이벤트 모델
+*/
+
+	window.onload = function(){
+	
+		var btn01 = document.getElementById("btn01");
+		/* 고전적 이벤트 모델: 이벤트 추가 */
+// 		btn01.onclick = function(){
+// 			alert("click btn01...");		
+// 		}
+		btn02.onclick = function(){
+			alert("click btn02...");
+		}
+		/* 고전적 이벤트 모델: 이벤트 해제 */
+		btn02.onclick = null;
+	}
+</script>
+</head>
+<body>
+
+<!-- 	<input id="btn01" type="button" value="이벤트 등록"> -->
+	<input id="btn02" type="button" value="이벤트 해제">
+
+</body>
+</html>
+
+
+
+
+

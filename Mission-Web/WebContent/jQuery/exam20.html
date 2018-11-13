@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.red {color:red;}
+	.blue{color:blue;}
+</style>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#btn01').click(function(){
+			$('body *').addClass('red');
+			$('button').removeClass('red');
+		});
+		$('#btn02').click(function(){
+			$('p').addClass('blue');
+			
+		});
+});
+</script>
+</head>
+<body>
+	<h1>나는 문장입니다.</h1>
+	<h1>나는 문장2입니다.</h1>
+	<p>나는 단락입니다.</p>
+	<div>
+		나는 구역입니다.
+	</div>
+	<button id="btn01">빨강</button>
+	<button id="btn02">파랑</button>
+</body>
+</html>

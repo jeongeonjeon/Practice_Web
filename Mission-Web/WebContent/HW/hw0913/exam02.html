@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function onClick(){
+		/* 방법1 */
+// 		var num = document.getElementsByTagName("span");
+// 		num[0].innerText++;
+
+		/* 방법2 */
+		var spanObj = document.getElementById("spanObj");
+		spanObj.innerText = parseInt(spanObj.innerText) + 1 ;
+	}
+</script>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div align="center">
+		<hr>
+		<span id="spanObj">1 </span>
+		<input type="button" value="클릭" onclick="onClick()">
+		<hr>
+	</div>
+</body>
+</html>

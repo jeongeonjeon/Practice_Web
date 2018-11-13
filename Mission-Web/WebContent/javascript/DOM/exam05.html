@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		댓글창 생성시 사용
+		
+		createElement(TagName)		: 노드생성
+		createTextNode(text)		: 텍스트 노드생성
+	*/
+	function onClick(){
+		var sub =  window.open('http://www.','',"width=300, height=400");
+	}
+	
+	window.onload = function(){
+		var h1Tag = document.createElement("h1");
+		var h1TagText = document.createTextNode("Hello");
+		
+		h1Tag.appendChild(h1TagText);
+		document.body.appendChild(h1Tag);
+		
+		var aTag = document.createElement("a");
+		var imgTag = document.createElement("img");
+		
+		/* 태그에 속성추가 */
+		/* 방법1 */
+// 		imgTag.setAttribute('src',"https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png");
+
+		/* 방법2 */
+		aTag.href="http://www.daum.net";
+		aTag.target = "_blank";
+		imgTag.src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png";
+
+// 		console.log(imgTag);
+		aTag.appendChild(imgTag);
+		document.body.appendChild(aTag);
+	}
+
+</script>
+</head>
+<body>
+	<!-- <h1>Hello</h1>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"> -->
+	
+	
+</body>
+</html>

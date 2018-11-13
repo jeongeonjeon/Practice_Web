@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 9. 다음의 결과를 보이는 프로그램 작성
+
+//   100M깊이의 우물에 달팽이가 빠졌습니다
+//   달팽이는 한시간의 5M속도록 우물을 기어오릅니다
+//   달팽이가 올라간 높이가 50M미만까지는 한시간에 1M씩 미끌어지고
+//   달팽이가 올라간 높이가 50M이상일때는 한시간에 2M씩 미끌어집니다
+//   달팽이가 몇시간만에 우물을 탈출하는지 진행일지를 작성하시오
+  
+//   [1시간후] 달팽이가 올라간 총 높이 : 4M
+//   [2시간후] 달팽이가 올라간 총 높이 : 8M
+//   ...
+//   [XX시간후] 달팽이가 올라간 총 높이 : 100M, 101M, 102M
+	
+	var height=0;
+	var count=0;
+	
+	while(height<100){
+		height +=(height<50?5-1:5-2)
+		document.write(`[${++count}시간 후] 달팽이가 올라간 총 높이 : ${height}M<br>`);
+	}
+	
+//// 	방법2
+// 	while((height+=5)<100){
+// 		if(height<50){
+// 			height-=1;
+// 		}else{
+// 			height-=2;
+// 		}	
+// 		document.write(`[${++count}시간 후] 달팽이가 올라간 총 높이 : ${height}M<br>`);
+// 	}
+// 	document.write(`[${++count}시간 후] 달팽이가 올라간 총 높이 : ${height}M<br>`);
+	
+	
+////	방법1
+// 	while(height<100){
+// 		count++;
+// 		height+=5
+// 		if(height<50){
+// 			height-=1;
+// 		}else{
+// 			height-=2;
+// 		}	
+// 		document.write(`[${count}시간 후] 달팽이가 올라간 총 높이 : ${height}M<br>`);
+//	}
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

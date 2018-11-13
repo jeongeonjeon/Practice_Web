@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// for 3개 if 1개
+
+// 	for(i=0;i<9;i++){
+// 		if(i<5){
+// 			for(j=0;j<=i;j++)
+// 				document.write("*&nbsp;");
+// 		}else{
+// 			for(j=9-i;j>0;j--){
+// 				document.write("*&nbsp;");
+// 			}
+// 		}
+// 		document.write("<br>")
+// 	}
+	
+//	for 2개 if 1개
+
+	for(i=0;i<9;i++){
+		for(j=0;j<=i&&j>=i-8;){
+			document.write("*&nbsp;");
+			if(i<5){
+				j++;
+			}else{
+				j--;
+			}
+		}
+		document.write("<br>")
+	}
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

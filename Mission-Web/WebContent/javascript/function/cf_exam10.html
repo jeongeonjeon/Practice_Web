@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var count = 0;
+	var pId = setInterval(function(){
+		
+		for(i=0;i<count;i++){
+			
+			document.write("<br><br>");
+		}
+		document.write("↕")
+
+		count++;
+		if(count == 5){
+			clearInterval(pId);
+		}
+	},100);
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 1. 4개의 정수를 입력받아 가장 큰수를 출력하는 코드를 작성
+// 첫번째 정수를 입력하세요 : 12
+// 두번째 정수를 입력하세요 : 93
+// 세번째 정수를 입력하세요 : 9
+// 네번째 정수를 입력하세요 : 56
+
+// 12, 93, 9, 56 중 큰수 : 93
+	
+	var num = new Array(4);
+	
+	for(var i=0;i<4;i++){
+		num[i]= Number(prompt(`${i+1}번째 정수를 입력하세요`));
+	}
+	var max=num[0];
+	
+	for(i=1;i<4;i++){
+		max = (max>num[i])?max:num[i];
+	}
+	
+	for(i=0;i<num.length;i++){
+		document.write(num[i]);
+		if(i<(num.length-1)){
+			document.write(" : ");
+		}
+	}
+	document.write(" 중 큰수 : "+max);
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

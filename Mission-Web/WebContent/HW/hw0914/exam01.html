@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var min=1;
+	var max=100;
+	var boolConfirm;
+	var randomNum, upDown, trueFalse;
+	
+	window.onload = function (){
+		boolConfirm = confirm("게임을 시작하겠습니까?","예","아니요");	
+	
+		if(boolConfirm){
+			var gameCount = prompt("반복할 횟수를 입력해주세요");
+		}
+		for(i=gameCount;i>0;){
+			randomNum = parseInt(Math.random()*(max-min+1)+min);
+			alert("최소값은"+min+" 최대값은"+max);
+			trueFalse = confirm(randomNum+"이 맞나요?");
+			if(trueFalse){
+				alert("맞췄습니다!!");
+				break;
+			}else{
+				--i;
+				if(i==0){
+					alert("맞추지 못했습니다.");
+					break;
+				}
+				upDown = confirm("기회는"+i+"번 남았습니다 \n"+randomNum+"보다 크면 확인, 작으면 취소를 눌러주세요 ");
+				if(upDown){
+					min=randomNum+1;
+				}else{
+					max=randomNum-1;
+				}
+			}
+			if(i==0){
+				alert("맞추지 못했습니다.");
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

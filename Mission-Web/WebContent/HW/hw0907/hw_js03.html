@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 3. 성적을 입력받아 학점을 출력하는 코드를 작성(if, switch 각각 작성)
+// 성 적                   학점 
+// ------------------------------
+// 90점이상                   A
+// 80 ~ 89점			 B
+// 70 ~ 79점			 C
+// 60 ~ 69점			 D
+// 60점미만			 F
+
+// 성적을 입력하세요 : 88
+// 88점의 학점은 B입니다
+
+// 성적을 입력하세요 : 101
+// 성적을 잘못입력하셨습니다 
+
+	score=Number(prompt("성적을 입력하세요"));
+	
+// 	if(score>=0&&score<=100){
+// 		if(score>=90)		alert(`${score}점의 학점은 A입니다.`);
+// 		else if(score>=80)	alert(`${score}점의 학점은 B입니다.`);
+// 		else if(score>=70)	alert(`${score}점의 학점은 C입니다.`);
+// 		else if(score>=60)	alert(`${score}점의 학점은 D입니다.`);
+// 		else				alert(`${score}점의 학점은 F입니다.`);
+// 	}else{
+// 		alert("성적을 잘못입력하셨습니다.");
+// 	}
+	
+	if(score<0||score>100){
+		alert("성적을 잘못입력하셨습니다.");
+	}else{
+		if(score>=90)		alert(`${score}점의 학점은 A입니다.`);
+		else if(score>=80)	alert(`${score}점의 학점은 B입니다.`);
+		else if(score>=70)	alert(`${score}점의 학점은 C입니다.`);
+		else if(score>=60)	alert(`${score}점의 학점은 D입니다.`);
+		else				alert(`${score}점의 학점은 F입니다.`);
+	}
+	
+	switch(true){
+	case score>=0&&score<=100:
+		switch(parseInt(score/10)){
+		case 10:
+		case 9:		alert(`${score}점의 학점은 A입니다.`);	break;
+		case 8:		alert(`${score}점의 학점은 B입니다.`);	break;
+		case 7:		alert(`${score}점의 학점은 C입니다.`);	break;
+		case 6:		alert(`${score}점의 학점은 D입니다.`);	break;
+		default:	alert(`${score}점의 학점은 F입니다.`);
+		}
+	break;
+	default:	alert("성적을 잘못입력하셨습니다.");
+	}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

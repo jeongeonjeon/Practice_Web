@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function randomFunc(){
+		return parseInt(Math.random()*100+1);
+	}
+	
+	function promFunc(min,max){
+		var num = parseInt(prompt(min+" ~ "+max+" : "));
+		return num;
+	}
+
+	function playGame(a){		//a:randomNum
+		var min = 1;
+		var max = 100;
+		
+		for(i=7;i>0;){
+			
+			var num = promFunc(min,max);
+			
+			document.write(min+" ~ "+max+" : "+num);
+			if(num == a){
+				document.write("<br>정답입니다.<br>")
+				break;
+			}else if(num > a){
+				document.write("<br>"+num+ "보다 작은수입니다.<br>");
+				alert(num+ "보다 작은수입니다.");
+				if(max>num){
+					max = num-1;
+				}
+			}else{
+				document.write("<br>"+num+ "보다 큰수입니다.<br>");
+				alert(num+ "보다 큰수입니다.");
+				if(min<num){
+					min = num+1;
+				}
+			}
+			document.write("기회는 "+(--i)+"번 남았습니다<br>");
+			
+			if(i==0){
+				document.write("아쉽습니다. 기회를 다 소진하셨습니다.<br>");
+				document.write("정답은 ["+a+"]입니다.<br>");
+			}
+			document.write("<br>");
+		}
+	}
+	
+	
+	var random = randomFunc();
+	
+	playGame(random);
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture_Web/jQuery/js/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+// 		$("ul li").hide();
+// 		$("ul li:first")hide();
+// 		$("ul li:first-child").hide();
+		
+// 		$("a[target]").hide();
+		$("a[href='http://www.naver.com']").hide();
+		
+// 		$("input:button").hide();
+// 		$("button").hide();
+// 		$(":button").hide();
+		
+		$(":button").click(function(){
+			console.log(this);
+			$(this).hide();
+		});
+		
+	});
+
+</script>
+</head>
+<body>	
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net" target="_blank">다음</a>
+	<input type="button" value="버튼1">
+	<button>버튼</button>
+	
+	<br><hr>
+	<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>코끼리</li>
+		<li>하마</li>
+		<li>사자</li>
+	</ul>
+	<h1>음식종류</h1>
+	<ul>
+		<li>로제파스타</li>
+		<li>안심</li>
+		<li>등심</li>
+		<li>알리오올리오</li>
+	</ul>
+
+</body>
+</html>

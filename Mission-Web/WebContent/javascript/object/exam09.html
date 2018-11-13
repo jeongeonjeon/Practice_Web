@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr) {
+		console.log('!!!');
+		console.log(this);
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+	
+	/* person의 멤버변수 추가 */
+	Person.prototype.hobby = '영화감상';
+	
+	/* person의 멤버함수 추가 */
+	Person.prototype.info = function() {
+		var msg = '';
+		for(var key in this) {
+			if(typeof this[key] != 'function')
+			msg += key + ' : ' + this[key] + '\n';
+		}
+		alert(msg);
+	}
+	
+	function Doctor(name, phone, addr, major) {
+		/* 
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+		 */
+		/*
+		this.base = Person;
+		this.base(name, phone, addr);
+		*/
+		
+	//	Person.call(this, name, phone, addr);
+		Person.apply(this, arguments);
+		this.major = major;
+	}
+	
+	Doctor.prototype = Person.prototype;
+	
+	var p = new Person('홍길동', '010-1111-2222', '서울시 서초구 서초동');
+	var d = new Doctor('나최고', '010-6666-7777', '서울시 강남구 역삼동', '신경외과');
+	
+	console.log(p instanceof Object);
+	console.log(d instanceof Person);
+	
+	console.log(d instanceof Object);
+	console.log(d instanceof Doctor);
+	console.log(d instanceof Person);
+	
+	d.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

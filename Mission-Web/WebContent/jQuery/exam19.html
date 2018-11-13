@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{border:1px solid red;}
+
+</style>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+// 			$('p').remove();
+// 			$('div').remove();	//div를 '포함'한 모든 것을 다 지움
+// 			$('div').empty();	//div를 '제외'한 모든 것을 지움
+		
+// 			$('#p01').remove();
+// 			$('.c01').remove();
+			
+// 			$('p.c01').remove();
+// 			$('p').remove('.c01');	//위와 동일한 결과
+			$('p').remove('.c01,#p02');
+			
+			
+			
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p id = "p01">나는 홍길동입니다.</p>
+		<mark class="c01">나는 김길동입니다.</mark><br>
+		나는 윤길동입니다.<br>
+		<p class="c01">나는 최길동입니다.</p>
+	</div>
+	<p id="p02">나는 김길동입니다.</p>
+	<button>삭제</button>
+</body>
+</html>

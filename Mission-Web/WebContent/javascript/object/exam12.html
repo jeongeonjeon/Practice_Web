@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	class Person {
+		constructor(name, phone, addr) {
+			this._name = name;
+			this._phone = phone;
+			this._addr = addr;
+		}
+		
+		info() {
+			var msg = '';
+			for(var key in this) {
+				if(typeof this[key] != 'function')
+					msg += key + " : " + this[key] + '\n';
+			}
+			alert(msg);
+		}
+		
+		// get / set 함수
+		get name() {
+			return this._name;
+		}
+		
+		set name(name) {
+			this._name = name;
+		}
+		
+		get phone() {
+			return this._phone;
+		}
+		
+		set phone(phone) {
+			this._phone = phone;
+		}
+		
+		get addr() {
+			return this._addr;
+		}
+		
+		set addr(addr) {
+			this._addr = addr;
+		}	
+	}
+
+	class Doctor extends Person {
+		
+		constructor(name, phone, addr, major) {
+			super(name, phone, addr);
+			this._major = major;
+		}
+		
+		get major() {
+			return this._major;
+		}
+		
+		set major(major) {
+			this._major = major;
+		}
+		
+	}
+
+	var p = new Person('홍길동', '010-1111-2222', '서울시 강남구 역삼동');
+	var d = new Doctor('나최고', '010-3333-4444', '서울시 강남구 압구정동', '신경외과');
+	
+	p.info();
+	d.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>

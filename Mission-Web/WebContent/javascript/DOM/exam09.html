@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 
+	event bubbling : 이벤트가 하위에서 상위로 이동하면 실행. ex)span->h1->div순
+	
+*/
+
+	window.onload = function() {
+		var span = document.querySelector('span');
+// 		console.log(span);
+		span.onclick=function(){
+			alert("span Click...");
+		}
+		var h1 = document.querySelector('h1');
+// 		console.log(h1);
+		h1.onclick=function(e){		//변수추가시 이벤트 버블링이 발생하지 않게 만들 수 있음
+			alert("h1 Click...");
+		
+			console.log(e);
+			
+// 			e.cancelBubble = true;		//익스플로러용 버블링 해제, false가 기본값
+										//크롬도 사용 가능
+// 			event = e || window.event;  
+// 			event.cancelBubble = true;	//위 코드보다 안정적
+			                            
+			if(event.stopPropagation){	//표준 버블링 해제
+				event.stopPropagation();
+			}
+		}
+		
+		var div = document.querySelector('div');
+// 		console.log(div);
+		div.onclick=function(){
+			alert("div Click...");
+		}
+	}
+</script>
+</head>
+<body>
+	<div>
+		<h1>
+			<span>Hello</span>
+		</h1>
+	</div>
+</body>
+</html>

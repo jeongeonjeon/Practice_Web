@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ 	div {
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	} 
+</style>
+<script src="/Lecture_Web/jQuery/js/jquery-3.3.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+// 	 	$('div').css({
+// 			width: '100px',
+// 			height: '100px',
+// 			'background-color' : 'red'
+// 		});
+	
+// 		$('div').hide(1000);
+// 		$('div').show(1000);
+// 		$('div').toggle(1000);
+// 		$('div').toggle(1000);
+
+		
+// 		$('div').fadeOut(3000);
+// 		$('div').fadeIn(3000);
+		$('div').fadeToggle(2000);
+		$('div').fadeToggle(1000);
+		
+		$('div').fadeTo(1000 , 0.2);
+
+	});
+
+</script>
+</head>
+<body>
+	<!-- <div style="width:100px; height:100px; background-color: red;"></div> -->
+	<div></div>
+</body>
+</html>

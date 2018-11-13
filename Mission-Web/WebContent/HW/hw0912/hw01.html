@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 1. 다음의 결과를 보이는 프로그램을 작성하시오.
+	1's 정수 : 12
+	2's 정수 : 8
+	3's 정수 : 3
+	4's 정수 : 16
+	5's 정수 : 73
+	6's 정수 : 34
+	7's 정수 : 7
+	8's 정수 : 823
+	9's 정수 : 63
+	10's 정수 : 37
+	
+	< 짝수 >
+	12  8  16  34
+	< 홀수 >
+	3  73  7  823  63  37
+*/
+
+	var num = [];
+	var str1 = [];
+	var str2 = [];
+	for(i=0;i<10;i++){
+		num[i] = prompt((i+1)+"'s 정수 : ");
+	}
+	for(i=0;i<num.length;i++){
+		if(num[i]%2 == 0){
+			str1.push(num[i]);  
+		}else{
+			str2.push(num[i]);
+		}
+	}
+	document.write("&lt;짝수&gt<br>");
+	document.write(str1);
+	
+	document.write("<br>&lt;홀수&gt<br>");
+	
+	document.write(str2);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{width:100px; height:100px; font-weight:bold; float:left; text-align:center; line-height:100px;}
+	#d01{background:red;}
+	#d02{background:orange;}
+	#d03{background:yellow;}
+	#d04{background:green;}
+	#d05{background:blue;}
+	#d06{background:navy;}
+	#d07{background:purple;}
+</style>
+<script src="/Lecture_Web/jQuery/js/jquery-3.3.1.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-Latest.min.js"></script> -->
+<script>
+	$(document).ready(function(){
+		$('div').mouseenter(function() {
+			$(this).stop().animate({
+				'width':'+=50px',
+				'height':'+=50px',
+				'line-height':'+=50px'
+			},500);
+			
+			$(this).text(function(index,text){
+				return text+"요일";
+			});
+		});
+		
+		$('div').mouseleave(function(){
+			$(this).stop().animate({
+				'width':'100px',
+				'height':'100px',
+				'line-height':'100px'
+			},500);
+			$(this).text(function(index,text){
+				return text.substring(0,1);
+			});
+		});
+	});
+
+
+</script>
+</head>
+<body>
+	<div id="d01">월</div>
+	<div id="d02">화</div>
+	<div id="d03">수</div>
+	<div id="d04">목</div>
+	<div id="d05">금</div>
+	<div id="d06">토</div>
+	<div id="d07">일</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var httpRequest = null;
+	
+	function getXMLHttpRequest() {
+		if(window.XMLHttpRequest) {
+			return new XMLHttpRequest();
+		} else if(window.ActiveXObject) {
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return null;
+	}
+	
+	function sendProcess(method, param) {
+		
+		var msg = '============================================================\n';
+		msg += method + ' /Lecture-Web/ajax/exam03/param2.jsp?name=' + param + '\n';
+		debugTrace(msg);
+		
+		httpRequest = getXMLHttpRequest();
+		httpRequest.onreadystatechange = callbackFunction;
+		
+		var url = 'param2.jsp';
+		param = encodeURIComponent(param);
+		var args = "name=" + param;
+		if(method == 'GET') {
+			httpRequest.open(method, url + '?' + args, true);
+			httpRequest.send(null);
+		} else if(method == 'POST') {
+			httpRequest.open(method, url, true);
+			httpRequest.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+			httpRequest.send(args);
+		}
+		
+/*		
+		// GET param2.jsp  name=hong
+		httpRequest.open("GET", "param2.jsp?name=hong", true);
+		httpRequest.send(null);
+		
+		// POST param2.jsp  name=hong
+		httpRequest.open("POST", "param2.jsp", true);
+		httpRequest.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+		httpRequest.send("name=hong");
+*/
+	}
+	
+	function callbackFunction() {
+		
+		var msg = '';
+		switch(httpRequest.readyState) {
+		case 1 :
+			msg += 'Loading...\n';
+			break;
+		case 2 : 
+			msg += 'Loaded...\n';
+			break;
+		case 3 : 
+			msg += 'Interactive...\n';
+			break;
+		case 4 : 
+			msg += 'Complete...\n';
+			if(httpRequest.status == 200) {
+				msg += '웹서버에서 정상적으로 수행...\n';
+				msg += '실행결과 : ' + httpRequest.responseText.trim() + '\n';
+			} else {
+				msg += '웹서버에서 오류 발생...\n';
+				msg += '오류코드 : ' + httpRequest.status + '\n';
+				msg += '오류내용 : ' + httpRequest.statusText + '\n';
+			}
+			msg += '============================================================\n';
+		}
+		debugTrace(msg);
+		
+	}
+	
+	function debugTrace(msg) {
+		var debug = document.getElementById("debug");
+		debug.value += msg;
+	}
+</script>
+</head>
+<body>
+	<textarea rows="10" cols="80" id="debug"></textarea><br>
+	<input type="button" value="GET 영문인자호출" onclick="sendProcess('GET', 'honggildong')">
+	<input type="button" value="GET 한글인자호출" onclick="sendProcess('GET', '홍길동')">
+	<input type="button" value="POST 영문인자호출" onclick="sendProcess('POST', 'honggildong')">
+	<input type="button" value="POST 한글인자호출" onclick="sendProcess('POST', '홍길동')">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

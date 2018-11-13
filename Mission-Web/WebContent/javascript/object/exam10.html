@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var func = function() {
+		console.log(this);
+		alert('num : ' + this.num);
+	}
+	
+	var obj01 = {
+		num : 10,
+		info : func
+	};
+	
+	var obj02 = {
+		num : 20,
+		num2 : 300,
+		info : func
+	};
+	
+//	func();			// undefined
+//	obj01.info();	// 10
+//	obj02.info();	// 20
+
+	obj01.info.apply(obj02);	// 20
+	obj01.info.apply(this);		// undefined
+	obj02.info.apply(null);
+		
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

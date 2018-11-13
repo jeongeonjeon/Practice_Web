@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 초를 입력받아 다음과 같이 출력하는 코드를 작성
+// 초를 입력하세요 : 3890
+// 3890초 : 1시간 4분 50초   
+
+	input_sec = Number(prompt("초를 입력하세요 : "));
+	
+	hour = parseInt(input_sec / 3600) ;
+	minute = parseInt(input_sec % 3600 / 60 );
+	second = (input_sec % 3600) % 60 ; 
+	
+	document.write(`${input_sec}초 : ${hour}시간 ${minute}분 ${second}초`);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

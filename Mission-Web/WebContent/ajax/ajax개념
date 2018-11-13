@@ -1,0 +1,33 @@
+#AJAX(asynchronous javascript and xml)
+ - 비동기 방식의 자바스크립트 XML						cf)  동기방식의 특징 : url이 바뀜
+ - ajax apps									비동기 방식의 특징 : url이 바뀌지 않음
+ 	: 구글맵, 야후맵, 네이버 검색 등
+ - 직관적이고 자연스런 사용자 상호액션 방식 
+ 	: 기존 클릭이 필요없음
+ - 화면의 일부분의 변경
+ 	: 기존     - 서버요청, 대기, 전체화면 새로고침
+ 	: AJAX - 업데이트가 필요한 부분만 변경
+ - 목적 : DOM구조 제어
+ - 구성요소 : XMLHttpRequest객체 , DOM, JavaScript, CSS
+ 
+ #XMLHttpRequest
+  - 자바스크립트 객체
+  - 대부분의 브라우저에서 지원
+  	: Firefox, Opera, Safari, Mozilla,Explorer8버전이후
+  - 표준 HTTP방식(GET/POST)으로 서버와 통신
+
+  
+ #ServerProcessing
+  - 기존 서버 작업 방식 사용
+  	: Servlet, JSP 등
+  - 응답 문서 타입                                        
+  	:기존 html 외에 xml, json, 단순 텍스트 사용
+ 
+#AJAX 프로그래맹 순서
+ 1. 클라이언트 이벤트 발샐
+ 2. XMLHttpRequest 객체 생성 
+ 3. XMLHttpRequest 객체 콜백함수 설정 
+ 4. XMLHttpRequest 객체를 통한 비동기화 요청
+ 5. 서버 응답결과를 생성하여 클라이언트로 전송
+ 6. XMLHttpRequest 객체는 서버 결과를 처리할 콜백함수 호출
+ 7. 결과를 클라이언트 화면에 반영

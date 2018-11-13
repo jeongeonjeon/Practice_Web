@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+	* 자바스크립트 내장함수
+		1. 타이머함수
+			setTimeout(function, ms)	:일정시간 후 함수 실행
+			setInterval(function, ms)	:일정시간마다 함수 실행
+			clearTimeout(function)		:setTimeout() 함수 정지
+			clearInterval(function)		:setInterval() 함수 정지
+			
+		2. 코드 실행함수
+		3. 숫자 변환함수
+*/
+// 	setTimeout("alert(wake up!!!)",5000);
+	setTimeout(function(){		//위 코드 대신 콜백함수를 사용한다.
+		alert("wake up!!!");
+		var num = 10;
+		alert('num :'+num);
+	},3000);
+	
+	var count = 0;
+	var pId = setInterval(function(){
+		alert("wake up!!!");
+		count++;
+		if(count == 3){
+			clearInterval(pId);
+			document.write("end");
+		}
+	},3000);
+	
+	setTimeout(function(){
+		clearInterval(pId);	
+	},6000);
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

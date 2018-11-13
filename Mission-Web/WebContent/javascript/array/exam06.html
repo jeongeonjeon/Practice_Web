@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = new Array(10,20,30,40,50);
+	
+	/*
+		0번째 변수 : 10;
+		1번째 변수 : 20;
+	*/
+
+	for(var i=0;i<nums.length;i++){
+		document.write(i+"번째 변수 : "+nums[i]+"</br>");
+	}
+	document.write("<hr>");
+	
+	for(var i in nums){
+		document.write(i + "번째 변수 : " +nums[i] + "</br>");
+	}
+	document.write("<hr>");
+	var idx = 0;
+	for(const num of nums){
+		document.write(`${idx++}번째 변수 : ${num}<br>`);
+	}
+	document.write("<hr>");
+	
+	/* ECMASCRIPT5 추가 : forEach() */
+	
+	nums.forEach(function(element,index /* ,nums */){
+		document.write(index+'번째 변수 : '+ element+"<br>");
+	});
+	document.write("<hr>");
+	
+	/* 깊은복사 */
+	
+// 	var copyNums = new Array();
+// 	for( var i in nums){
+// 		copyNums.push(nums[i]);
+// 	} 
+	
+// 	var copyNums = [...nums];	//전개연산자 사용
+	
+// 	/* ES5추가 : map() */
+// 	var copyNums = nums.map(function (element){
+// 		return element;
+// 	});
+	
+	/* nums배열의 모든 요소에 100을 더한 값을 가지는 copyNums배열 생성 */
+	var copyNums = nums.map(function(element){
+		return element+100;
+	})
+	
+	document.write(copyNums);
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

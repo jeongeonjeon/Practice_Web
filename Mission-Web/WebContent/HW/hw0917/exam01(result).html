@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+class Student {
+
+	constructor() {
+		this.kor = 0;
+		this.eng = 0;
+		this.math = 0;
+		this.total = 0;
+		this.avg = 0.0;
+	}
+}
+*/
+
+	function Student(kor, eng, math) {
+	//  this.score = {'kor' : kor, 'eng' : eng, 'math': math};
+	//	this.score = [kor, eng, math];
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	//	this.total = this.kor + this.eng + this.math;
+	//	this.avg = this.total / 3;
+	}
+	
+	Student.prototype.getTotalAvg = function() {
+		this.total = this.kor + this.eng + this.math;
+		this.avg = this.total / 3;
+		this.avg = this.avg.toFixed(2);	//소수점 두자리 
+	}
+	
+	Student.prototype.toString = function() {
+		
+		var str = '';
+		for(var key in this) {
+			if(typeof this[key] != 'function') 
+				str += this[key] + ' ';
+		}
+		
+		return str;
+		
+	}
+	
+	function getScore() {
+		var score = Math.floor(Math.random() * 100) + 1;
+		return score;
+	}
+
+	
+	var stuArr = [];
+	for(var i = 0; i < 5; i++) {
+		var kor = getScore();
+		var eng = getScore();
+		var math = getScore();
+		stuArr[i] = new Student(kor, eng, math);
+		stuArr[i].getTotalAvg();
+		
+	}
+	
+	function getRank(no,stuArr){
+		var rank = 1;
+		for(let score of stuArr){
+			if(stuArr[no].total < score.total){
+				rank++;
+			}
+		}
+		return rank;
+	}
+	
+	document.write('NO KOR ENG MATH TOTAL AVG <br>');
+	for(var i in stuArr) {
+		stuArr[i].getTotalAvg();
+		var rank = getRank(i,stuArr);
+		document.write((parseInt(i) + 1) + ' ');
+		document.write(stuArr[i]+" "+ rank +'<br>');
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

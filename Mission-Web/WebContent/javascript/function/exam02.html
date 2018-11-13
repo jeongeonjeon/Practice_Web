@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//선언적 함수
+	function aaa(){
+		alert("선언적 함수 aaa()함수 호출...");		
+	}
+	
+	aaa();	//선언적 함수호출
+	
+	function bbb(){
+		alert("선언적 함수 bbb()함수 호출...");		
+	}
+		
+	var ccc = bbb;	//ccc 또한 data type이 function이다.
+	
+	
+	
+// 	var ddd = function bbb(){	//익명함수이므로 bbb함수가 재정의 되지않음.
+	var ddd = function(){		//따라서 함수명을 생략하여 사용한다.
+		alert("bbb()호출");
+	}
+	
+	ddd();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = 10;
+//	num = num + 1;
+//	num += 1;
+//	++num;	// 전위증가연사자
+//	num++;	// 후위증가연산자
+
+	num = 10;
+	var num2 = ++num;
+	alert(num + " : " + num2);	// 11 : 11
+	
+	num = 10;
+	num2 = num++;
+	alert(num + " : " + num2);	// 11 : 10
+	
+	num = 10;
+
+	alert(num++);	// 10
+	/*
+		alert(num);
+		num = num + 1;	// 10 -> 11
+	*/
+	alert(++num);	// 12
+	/*
+		num = num + 1;	// 11 -> 12
+		alert(num);
+	*/
+	alert(num);		// 12
+	alert(--num);	// 11
+	/*
+		num = num - 1;	// 12 -> 11
+		alert(num);
+	*/
+	alert(num++);		// 11
+	/*
+		alert(num);
+		num = num + 1;	// 11 -> 12
+	*/
+	alert(num--);		// 12
+	/*
+		alert(num);
+		num = num - 1;	// 12 -> 11
+	*/
+	alert(num);			// 11
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
